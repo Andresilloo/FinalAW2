@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alta de Materias</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="index.html">Listado alumnos</a>
+        <a href="alta.html">Alta alumno</a>
+        <a href="adminMaterias.html">Alta alumno</a>
+    </nav>
+    <h1>Alta de Materias</h1>
+  </header>
+  <main>
+    <section>
+      <form id="form-alta-materias">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="descripcion" placeholder="Descripción" required>
+        <input type="number" name="creditos" placeholder="Créditos" required>
+        <button type="submit">Registrar Materia</button>
+      </form>
+      <div id="mensajes"></div>
+    </section>
+  </main>
+  <script type="module" src="/js/materias/altaMaterias.js"></script>
+</body>
+</html>
