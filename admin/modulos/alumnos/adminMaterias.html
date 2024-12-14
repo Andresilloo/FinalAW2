@@ -3,30 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alta de Materias</title>
-  <link rel="stylesheet" href="/css/admin.css">
+  <title>Administración de Materias</title>
+  <link rel="stylesheet" href="/recursos/css/base.css"> <!-- Enlace al CSS base -->
 </head>
 <body>
+  <!-- Header -->
   <header>
     <nav>
-        <a href="/">Inicio</a>
-        <a href="index.html">Listado alumnos</a>
-        <a href="alta.html">Alta alumno</a>
-        <a href="adminMaterias.html">Alta alumno</a>
-    </nav>
-    <h1>Alta de Materias</h1>
+            <a href="/">Inicio</a>
+            <a href="index.html">Listado alumnos</a>
+            <a href="alta.html">Alta alumno</a>
+            <a href="adminMaterias.html">Admin</a>
+        </nav>
   </header>
+  <hr>
+  <!-- Contenido Principal -->
   <main>
+    <!-- Encabezado -->
+    <h1>Administración de Materias</h1>
+    <center><p>Desde aquí puedes gestionar las materias del sistema.</p></center>
+    <br>
+    <!-- Mensajes -->
+    <div class="mensajes"></div>
+    <h2>Añadir Materia</h2>
+    <!-- Formulario para añadir materias -->
     <section>
       <form id="form-alta-materias">
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <input type="text" name="descripcion" placeholder="Descripción" required>
-        <input type="number" name="creditos" placeholder="Créditos" required>
+        <label>
+          Nombre:
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+        </label>
+        <label>
+          Descripción:
+          <input type="text" id="descripcion" name="descripcion" placeholder="Descripción" required>
+        </label>
+        <label>
+          Créditos:
+          <input type="number" id="creditos" name="creditos" placeholder="Créditos" required>
+        </label>
         <button type="submit">Registrar Materia</button>
       </form>
-      <div id="mensajes"></div>
+    </section>
+
+    <br>
+    <!-- Tabla de materias -->
+    <h2>Listado de Materias</h2>
+    <section class="tabla-materias">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Créditos</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Matemáticas</td>
+            <td>Álgebra y cálculo</td>
+            <td>5</td>
+            <td>
+              <a href="#" class="editar">Editar</a>
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Historia</td>
+            <td>Historia mundial</td>
+            <td>4</td>
+            <td>
+              <a href="#" class="editar">Editar</a>
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
+
   <script type="module" src="/js/materias/altaMaterias.js"></script>
 </body>
 </html>
