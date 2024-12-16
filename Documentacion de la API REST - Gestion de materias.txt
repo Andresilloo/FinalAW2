@@ -1,0 +1,124 @@
+# API REST - Modulo Gestión de Materias
+API para la gestión de materias en un sistema educativo. Proporciona endpoints para crear, leer, actualizar y eliminar materias.
+---------------------------------------------------
+Endpoints y Verbos HTTP
+
+1. Obtener todas las materias
+-Verbo HTTP: GET
+-Endpoint: /materias
+
+2. Crear una nueva materia
+Verbo HTTP: POST
+Endpoint: /materias
+
+3. Obtener una materia por ID
+Verbo HTTP: GET
+Endpoint: /materias/{id}
+
+4. Actualizar una materia
+Verbo HTTP: PUT
+Endpoint: /materias/{id}
+
+5.Eliminar una materia
+Verbo HTTP: DELETE
+Endpoint: /materias/{id}
+---------------------------------------------------
+Códigos de Estado
+
+Código	Descripción
+200	    Solicitud exitosa y respuesta con el contenido solicitado.
+201	    Recurso creado exitosamente.
+400	    La solicitud contiene datos inválidos o incompletos.
+404	    El recurso solicitado no fue encontrado.
+500	    Error interno del servidor.
+---------------------------------------------------
+Estructuras JSON Devueltas por los Endpoints
+
+1. Obtener todas las materias
+Respuesta Exitosa (200 OK):
+[
+  {
+    "id": 1,
+    "nombre": "Matemáticas",
+    "modulosPorSemana": 5
+  },
+  {
+    "id": 2,
+    "nombre": "Historia",
+    "modulosPorSemana": 3
+  }
+]
+
+Sin Datos Disponibles (200 OK):
+{
+  "mensaje": "No hay materias disponibles."
+}
+
+2. Crear una nueva materia
+Cuerpo de la Solicitud:
+{
+  "nombre": "Física",
+  "modulosPorSemana": 4
+}
+
+Respuesta Exitosa (201 Created):
+{
+  "id": 3,
+  "nombre": "Física",
+  "modulosPorSemana": 4,
+  "mensaje": "Materia creada exitosamente."
+}
+
+Error en la Solicitud (400 Bad Request):
+{
+  "mensaje": "Datos de la materia incompletos o inválidos."
+}
+
+3. Obtener una materia por ID
+Respuesta Exitosa (200 OK):
+{
+  "id": 1,
+  "nombre": "Matemáticas",
+  "modulosPorSemana": 5
+}
+
+Materia No Encontrada (404 Not Found):
+{
+  "mensaje": "Materia no encontrada."
+}
+
+4. Actualizar una materia
+Cuerpo de la Solicitud:
+{
+  "nombre": "Matemáticas",
+  "modulosPorSemana": 6
+}
+
+Respuesta Exitosa (200 OK):
+{
+  "id": 1,
+  "nombre": "Matemáticas",
+  "modulosPorSemana": 6,
+  "mensaje": "Materia actualizada exitosamente."
+}
+
+Materia No Encontrada (404 Not Found):
+{
+  "mensaje": "Materia no encontrada."
+}
+
+Error en la Solicitud (400 Bad Request):
+{
+  "mensaje": "Datos de la materia incompletos o inválidos."
+}
+
+5. Eliminar una materia
+Respuesta Exitosa (200 OK):
+{
+ "mensaje": "Materia eliminada exitosamente."
+}
+
+Materia No Encontrada (404 Not Found):
+{
+  "mensaje": "Materia no encontrada."
+}

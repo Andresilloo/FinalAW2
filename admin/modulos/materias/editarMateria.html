@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALUMNOS</title>
+    <title>MATERIAS</title>
     <link rel="stylesheet" href="/recursos/css/base.css">
-    <script type="module" src="./js/editar.js"></script>
+    <script type="module" src="./js/editarMaterias.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <a href="/">Inicio</a>
-            <a href="index.html">Listado alumnos</a>
-            <a href="alta.html">Alta alumno</a>
-            <a href="/modulos/materias/indexMateria.html">Admin</a>
+            <a href="indexMateria.html">Inicio</a>
+            <a href="listadoMaterias.html">Listado materias</a>
+            <a href="altaMateria.html">Alta materias</a>
+            <a href="/">Salir</a>
         </nav>
     </header>
     <hr>
     <main>
 
-        <h1>Alumnos</h1>
+        <h1>Materias</h1>
         <h2>Editar</h2>
         <div class="eliminar-registro">
             <button class="boton-eliminar" id="eliminar-registro">Eliminar registro</button>
@@ -27,24 +27,16 @@
         <div class="mensajes" id="mensajes"></div>
         <section>
             <form id="form-editar">
-                <label for="dni">
-                    DNI
-                    <input type="number" name="dni" id="dni" step="1" required>
-                </label>
                 <label for="nombre">
                     NOMBRE
                     <input type="text" name="nombre" id="nombre" required>
                 </label>
-                <label for="apellido">
-                    APELLIDO
-                    <input type="text" name="apellido" id="apellido" required>
-                </label>
-                <label for="email">
-                    EMAIL
-                    <input type="email" name="email" id="email" required>
+                <label for="modulos_por_semana">
+                    MÓDULOS POR SEMANA
+                    <input type="number" name="modulos_por_semana" id="modulos_por_semana" step="1" required>
                 </label>
                 <button type="submit">Modificar</button>
-            </form>
+            </form>            
         </section>
     </main>
 </body>
